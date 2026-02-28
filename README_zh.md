@@ -144,9 +144,7 @@ ReqElicitBench/
 
 ## 📝 引用
 
-如果你在研究中使用了本仓库，请引用：
-
-> Dongming Jin, Zhi Jin, Zheng Fang, Linyu Li, Xiaotian Yang, Yuanpeng He, and Xiaohong Chen. 2025. ReqElicitGym: An Evaluation Environment for Interview Competence in Conversational Requirements Elicitation. *ACM Transactions on Software Engineering and Methodology (TOSEM).*
+如果你在研究中使用了本仓库，请引用.
 
 ## 📄 许可
 

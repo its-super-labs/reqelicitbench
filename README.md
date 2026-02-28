@@ -145,9 +145,7 @@ After running, two artifacts are produced:
 
 ## 📝 Citation
 
-If you use this repository in your research, please cite:
-
-> Dongming Jin, Zhi Jin, Zheng Fang, Linyu Li, Xiaotian Yang, Yuanpeng He, and Xiaohong Chen. 2025. ReqElicitGym: An Evaluation Environment for Interview Competence in Conversational Requirements Elicitation. *ACM Transactions on Software Engineering and Methodology (TOSEM).*
+If you use this repository in your research, please cite our paper.
 
 ## 📄 License
 
