@@ -1,0 +1,4622 @@
+{
+  "data_path": "ReqElicitGym/data/test.json",
+  "config": {
+    "interviewer_model": "Pro/deepseek-ai/DeepSeek-V3.2",
+    "judge_model": "glm-4.7-flashx",
+    "user_model": "glm-4.7-flashx",
+    "user_answer_quality": "high",
+    "max_steps": 20
+  },
+  "overall_evaluation": {
+    "total_test_samples": 100,
+    "total_hidden_requirements": 627,
+    "total_elicited": 120,
+    "average_elicitation_ratio": 0.19231565656565658,
+    "average_tkqr": 0.40556774550290253,
+    "average_ora": 0.45430684452314374,
+    "variance_elicitation_ratio": 0.03310921125017958,
+    "variance_tkqr": 0.07057952285477477,
+    "variance_ora": 0.06093768850233308,
+    "average_token_cost": 4839.24,
+    "variance_token_cost": 5224437.482400003,
+    "elicitation_ratio_from_totals": 0.19138755980861244,
+    "action_type_effectiveness": {
+      "clarify": {
+        "total": 209,
+        "effective": 28,
+        "effectiveness_ratio": 0.1339712918660287
+      },
+      "probe": {
+        "total": 264,
+        "effective": 164,
+        "effectiveness_ratio": 0.6212121212121212
+      },
+      "finish": {
+        "total": 100,
+        "effective": 0,
+        "effectiveness_ratio": 0.0
+      }
+    },
+    "aspect_type_elicitation": {
+      "Interaction": {
+        "total": 224,
+        "elicited": 66,
+        "elicitation_ratio": 0.29464285714285715
+      },
+      "Content": {
+        "total": 203,
+        "elicited": 54,
+        "elicitation_ratio": 0.2660098522167488
+      },
+      "Style": {
+        "total": 200,
+        "elicited": 0,
+        "elicitation_ratio": 0.0
+      }
+    },
+    "application_type_statistics": {
+      "Analytics Platforms/Dashboards": {
+        "num_tasks": 5,
+        "average_elicitation_ratio": 0.16,
+        "variance_elicitation_ratio": 0.022400000000000003,
+        "average_tkqr": 0.5007128596129111,
+        "variance_tkqr": 0.014019705496404727,
+        "average_ora": 0.9260823741767641,
+        "variance_ora": 0.010754282300208149
+      },
+      "Browser-Based Games": {
+        "num_tasks": 7,
+        "average_elicitation_ratio": 0.1476190476190476,
+        "variance_elicitation_ratio": 0.03551020408163265,
+        "average_tkqr": 0.2222709173905882,
+        "variance_tkqr": 0.09652255364933739,
+        "average_ora": 0.6568084283680967,
+        "variance_ora": 0.11733321892620101
+      },
+      "Company Brochure Sites": {
+        "num_tasks": 8,
+        "average_elicitation_ratio": 0.13541666666666666,
+        "variance_elicitation_ratio": 0.034613715277777776,
+        "average_tkqr": 0.23702885645732197,
+        "variance_tkqr": 0.08294859738343328,
+        "average_ora": 0.8100565473583872,
+        "variance_ora": 0.06729475638845957
+      },
+      "CRM Systems": {
+        "num_tasks": 4,
+        "average_elicitation_ratio": 0.26666666666666666,
+        "variance_elicitation_ratio": 0.03833333333333333,
+        "average_tkqr": 0.3958679763557529,
+        "variance_tkqr": 0.027740357582121386,
+        "average_ora": 0.6180940654004432,
+        "variance_ora": 0.022983911244362606
+      },
+      "Discussion Forums": {
+        "num_tasks": 8,
+        "average_elicitation_ratio": 0.15416666666666667,
+        "variance_elicitation_ratio": 0.04137152777777778,
+        "average_tkqr": 0.25208346342614696,
+        "variance_tkqr": 0.08544284949443207,
+        "average_ora": 0.8102171907659188,
+        "variance_ora": 0.03558780750387121
+      },
+      "E-commerce Web Applications": {
+        "num_tasks": 8,
+        "average_elicitation_ratio": 0.29375,
+        "variance_elicitation_ratio": 0.04888454861111111,
+        "average_tkqr": 0.34872159284194765,
+        "variance_tkqr": 0.07273431495354832,
+        "average_ora": 0.8516642790253501,
+        "variance_ora": 0.012780249696483783
+      },
+      "Email Clients": {
+        "num_tasks": 2,
+        "average_elicitation_ratio": 0.0,
+        "variance_elicitation_ratio": 0.0,
+        "average_tkqr": 0.0,
+        "variance_tkqr": 0.0,
+        "average_ora": 0.5259383095880078,
+        "variance_ora": 0.09934509779321005
+      },
+      "ERP Platforms": {
+        "num_tasks": 4,
+        "average_elicitation_ratio": 0.1911706349206349,
+        "variance_elicitation_ratio": 0.01886482544406651,
+        "average_tkqr": 0.4175474722216006,
+        "variance_tkqr": 0.012105560954087961,
+        "average_ora": 0.5478072794919693,
+        "variance_ora": 0.05668030202210762
+      },
+      "Internal Tools": {
+        "num_tasks": 3,
+        "average_elicitation_ratio": 0.2916666666666667,
+        "variance_elicitation_ratio": 0.045138888888888895,
+        "average_tkqr": 0.42937832565456474,
+        "variance_tkqr": 0.04773475952592977,
+        "average_ora": 0.8149882307208595,
+        "variance_ora": 0.009532559399372049
+      },
+      "Job Search Platforms": {
+        "num_tasks": 4,
+        "average_elicitation_ratio": 0.1534090909090909,
+        "variance_elicitation_ratio": 0.025148502066115706,
+        "average_tkqr": 0.5984333959836321,
+        "variance_tkqr": 0.06885336825869115,
+        "average_ora": 0.6395179508192057,
+        "variance_ora": 0.029593030937738442
+      },
+      "Learning Platforms": {
+        "num_tasks": 8,
+        "average_elicitation_ratio": 0.19881854256854256,
+        "variance_elicitation_ratio": 0.021011282607433845,
+        "average_tkqr": 0.46161954837457986,
+        "variance_tkqr": 0.07747503517843303,
+        "average_ora": 0.6989198231920295,
+        "variance_ora": 0.04092822782505401
+      },
+      "News and Information Sites": {
+        "num_tasks": 6,
+        "average_elicitation_ratio": 0.05555555555555555,
+        "variance_elicitation_ratio": 0.0154320987654321,
+        "average_tkqr": 0.13913780840163356,
+        "variance_tkqr": 0.020381617039548702,
+        "average_ora": 0.5663653547778452,
+        "variance_ora": 0.07423342239892497
+      },
+      "Personal Blog Sites": {
+        "num_tasks": 2,
+        "average_elicitation_ratio": 0.18333333333333335,
+        "variance_elicitation_ratio": 0.00027777777777777816,
+        "average_tkqr": 0.303178501658982,
+        "variance_tkqr": 0.0032348922206897543,
+        "average_ora": 0.7637111734735107,
+        "variance_ora": 0.02633391895987718
+      },
+      "Personal Portfolio Sites": {
+        "num_tasks": 6,
+        "average_elicitation_ratio": 0.1875,
+        "variance_elicitation_ratio": 0.023003472222222227,
+        "average_tkqr": 0.30923229722062723,
+        "variance_tkqr": 0.06761737653510898,
+        "average_ora": 0.7931795251181405,
+        "variance_ora": 0.008595898065254298
+      },
+      "Productivity Applications": {
+        "num_tasks": 5,
+        "average_elicitation_ratio": 0.20388888888888887,
+        "variance_elicitation_ratio": 0.019245679012345678,
+        "average_tkqr": 0.5087230159773752,
+        "variance_tkqr": 0.08448836766324523,
+        "average_ora": 0.6151884400117337,
+        "variance_ora": 0.07784685997453904
+      },
+      "Project Management Tools": {
+        "num_tasks": 4,
+        "average_elicitation_ratio": 0.24642857142857144,
+        "variance_elicitation_ratio": 0.03218112244897959,
+        "average_tkqr": 0.5919266251121156,
+        "variance_tkqr": 0.02038276569334358,
+        "average_ora": 0.7393831862783425,
+        "variance_ora": 0.043103516584129135
+      },
+      "Publishing/Blogging Platforms": {
+        "num_tasks": 4,
+        "average_elicitation_ratio": 0.27976190476190477,
+        "variance_elicitation_ratio": 0.018530328798185943,
+        "average_tkqr": 0.5176727872826672,
+        "variance_tkqr": 0.05705649448993269,
+        "average_ora": 0.7691806903994607,
+        "variance_ora": 0.02265713279212788
+      },
+      "Social Media Platforms": {
+        "num_tasks": 4,
+        "average_elicitation_ratio": 0.3194444444444444,
+        "variance_elicitation_ratio": 0.01909722222222222,
+        "average_tkqr": 0.33128226384466136,
+        "variance_tkqr": 0.006710484518708409,
+        "average_ora": 0.720092090698704,
+        "variance_ora": 0.0910476816652539
+      },
+      "Streaming and Interactive Platforms": {
+        "num_tasks": 2,
+        "average_elicitation_ratio": 0.33035714285714285,
+        "variance_elicitation_ratio": 0.001992984693877552,
+        "average_tkqr": 0.4751265751146144,
+        "variance_tkqr": 0.008383271641992367,
+        "average_ora": 0.7748906362790285,
+        "variance_ora": 0.009475387858993406
+      },
+      "Travel Booking Portals": {
+        "num_tasks": 6,
+        "average_elicitation_ratio": 0.15555555555555553,
+        "variance_elicitation_ratio": 0.028395061728395055,
+        "average_tkqr": 0.40556774550290253,
+        "variance_tkqr": 0.007581535703648177,
+        "average_ora": 0.45430684452314374,
+        "variance_ora": 0.041288898490108465
+      }
+    }
+  },
+  "task_results": [
+    {
+      "task_id": "task_1",
+      "total_requirements": 5,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.4,
+      "tkqr": 0.4468535299918563,
+      "ora": 1.0,
+      "num_rounds": 6,
+      "optimal_rounds": 6,
+      "token_cost": 4854,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 3,
+          "effectiveness_ratio": 0.75
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_2",
+      "total_requirements": 6,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.5896084319766756,
+      "ora": 1.0,
+      "num_rounds": 7,
+      "optimal_rounds": 7,
+      "token_cost": 6022,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 5,
+          "effective": 4,
+          "effectiveness_ratio": 0.8
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_3",
+      "total_requirements": 5,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.2,
+      "tkqr": 0.5296347172140421,
+      "ora": 0.7352284512792991,
+      "num_rounds": 8,
+      "optimal_rounds": 6,
+      "token_cost": 8210,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 6,
+          "effective": 3,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_4",
+      "total_requirements": 5,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.2,
+      "tkqr": 0.30078518014914984,
+      "ora": 1.0,
+      "num_rounds": 6,
+      "optimal_rounds": 6,
+      "token_cost": 4456,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 2,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_5",
+      "total_requirements": 4,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.6366824387328317,
+      "ora": 0.8951834196045215,
+      "num_rounds": 4,
+      "optimal_rounds": 5,
+      "token_cost": 2917,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_6",
+      "total_requirements": 5,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.9259884638128468,
+      "num_rounds": 7,
+      "optimal_rounds": 6,
+      "token_cost": 6633,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 5,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_7",
+      "total_requirements": 2,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.29220606019760687,
+      "num_rounds": 5,
+      "optimal_rounds": 3,
+      "token_cost": 3677,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_8",
+      "total_requirements": 5,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.2,
+      "tkqr": 0.16958010263680806,
+      "ora": 0.5005531347669072,
+      "num_rounds": 9,
+      "optimal_rounds": 6,
+      "token_cost": 7701,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 8,
+          "effective": 1,
+          "effectiveness_ratio": 0.125
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_9",
+      "total_requirements": 2,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.06277702665912487,
+      "num_rounds": 6,
+      "optimal_rounds": 3,
+      "token_cost": 4492,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 5,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_10",
+      "total_requirements": 6,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.8192424985064939,
+      "ora": 0.9450729246636724,
+      "num_rounds": 8,
+      "optimal_rounds": 7,
+      "token_cost": 7756,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 7,
+          "effective": 5,
+          "effectiveness_ratio": 0.7142857142857143
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 2,
+          "elicitation_ratio": 0.6666666666666666
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_11",
+      "total_requirements": 5,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.9259884638128468,
+      "num_rounds": 7,
+      "optimal_rounds": 6,
+      "token_cost": 6241,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 6,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_12",
+      "total_requirements": 6,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.5670738205908158,
+      "ora": 0.9450729246636724,
+      "num_rounds": 8,
+      "optimal_rounds": 7,
+      "token_cost": 6458,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 6,
+          "effective": 4,
+          "effectiveness_ratio": 0.6666666666666666
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_13",
+      "total_requirements": 3,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.2960819109658652,
+      "ora": 1.0,
+      "num_rounds": 4,
+      "optimal_rounds": 4,
+      "token_cost": 3252,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_14",
+      "total_requirements": 4,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.25,
+      "tkqr": 0.3903800499921017,
+      "ora": 0.8951834196045215,
+      "num_rounds": 4,
+      "optimal_rounds": 5,
+      "token_cost": 2898,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 3,
+          "effective": 1,
+          "effectiveness_ratio": 0.3333333333333333
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_15",
+      "total_requirements": 6,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.8706086854269929,
+      "ora": 0.40499078381293413,
+      "num_rounds": 11,
+      "optimal_rounds": 7,
+      "token_cost": 12151,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 8,
+          "effective": 4,
+          "effectiveness_ratio": 0.5
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 3,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_16",
+      "total_requirements": 7,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.33914929209203315,
+      "num_rounds": 3,
+      "optimal_rounds": 8,
+      "token_cost": 1944,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_17",
+      "total_requirements": 4,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 1.0,
+      "num_rounds": 5,
+      "optimal_rounds": 5,
+      "token_cost": 3773,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_18",
+      "total_requirements": 5,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.3391602052736161,
+      "ora": 1.0,
+      "num_rounds": 6,
+      "optimal_rounds": 6,
+      "token_cost": 5113,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 5,
+          "effective": 1,
+          "effectiveness_ratio": 0.2
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_19",
+      "total_requirements": 3,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.8411288833576084,
+      "num_rounds": 5,
+      "optimal_rounds": 4,
+      "token_cost": 3864,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_20",
+      "total_requirements": 2,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 1.0,
+      "num_rounds": 3,
+      "optimal_rounds": 3,
+      "token_cost": 2224,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_21",
+      "total_requirements": 10,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.1,
+      "tkqr": 0.16958010263680806,
+      "ora": 0.43885482942382986,
+      "num_rounds": 5,
+      "optimal_rounds": 11,
+      "token_cost": 3980,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 6,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_22",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.38356636737133565,
+      "ora": 0.7977398461317364,
+      "num_rounds": 5,
+      "optimal_rounds": 7,
+      "token_cost": 4129,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 3,
+          "effective": 1,
+          "effectiveness_ratio": 0.3333333333333333
+        },
+        "clarify": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_23",
+      "total_requirements": 5,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.2,
+      "tkqr": 0.3903800499921017,
+      "ora": 0.7352284512792991,
+      "num_rounds": 4,
+      "optimal_rounds": 6,
+      "token_cost": 3063,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_24",
+      "total_requirements": 5,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.6,
+      "tkqr": 0.639945385422766,
+      "ora": 0.5005531347669072,
+      "num_rounds": 9,
+      "optimal_rounds": 6,
+      "token_cost": 9483,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 5,
+          "effective": 3,
+          "effectiveness_ratio": 0.6
+        },
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_25",
+      "total_requirements": 5,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.7352284512792991,
+      "num_rounds": 4,
+      "optimal_rounds": 6,
+      "token_cost": 2549,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_26",
+      "total_requirements": 6,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.40499078381293413,
+      "num_rounds": 3,
+      "optimal_rounds": 7,
+      "token_cost": 1971,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_27",
+      "total_requirements": 5,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.4,
+      "tkqr": 0.6548086577531307,
+      "ora": 0.9259884638128468,
+      "num_rounds": 5,
+      "optimal_rounds": 6,
+      "token_cost": 4098,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 3,
+          "effective": 3,
+          "effectiveness_ratio": 1.0
+        },
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_28",
+      "total_requirements": 5,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.14606834984270645,
+      "ora": 0.7352284512792991,
+      "num_rounds": 8,
+      "optimal_rounds": 6,
+      "token_cost": 7343,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 6,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_29",
+      "total_requirements": 2,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.7352284512792991,
+      "num_rounds": 4,
+      "optimal_rounds": 3,
+      "token_cost": 2704,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_30",
+      "total_requirements": 6,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.5709662133861837,
+      "ora": 1.0,
+      "num_rounds": 7,
+      "optimal_rounds": 7,
+      "token_cost": 6805,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "probe": {
+          "total": 4,
+          "effective": 2,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 2,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_31",
+      "total_requirements": 6,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.644824486427155,
+      "ora": 0.9450729246636724,
+      "num_rounds": 8,
+      "optimal_rounds": 7,
+      "token_cost": 7644,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "probe": {
+          "total": 5,
+          "effective": 2,
+          "effectiveness_ratio": 0.4
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_32",
+      "total_requirements": 3,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 1.0,
+      "num_rounds": 4,
+      "optimal_rounds": 4,
+      "token_cost": 2885,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_33",
+      "total_requirements": 5,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.6,
+      "tkqr": 0.5296347172140421,
+      "ora": 1.0,
+      "num_rounds": 6,
+      "optimal_rounds": 6,
+      "token_cost": 4642,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 3,
+          "effectiveness_ratio": 0.75
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_34",
+      "total_requirements": 8,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.25,
+      "tkqr": 0.3212446320893053,
+      "ora": 0.7352284512792991,
+      "num_rounds": 6,
+      "optimal_rounds": 9,
+      "token_cost": 4747,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 3,
+          "effective": 2,
+          "effectiveness_ratio": 0.6666666666666666
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 5,
+          "elicited": 2,
+          "elicitation_ratio": 0.4
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_35",
+      "total_requirements": 6,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.47254583883871204,
+      "ora": 0.9450729246636724,
+      "num_rounds": 6,
+      "optimal_rounds": 7,
+      "token_cost": 4721,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 3,
+          "effectiveness_ratio": 0.75
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_36",
+      "total_requirements": 4,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.6421671991447901,
+      "num_rounds": 3,
+      "optimal_rounds": 5,
+      "token_cost": 1938,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_37",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.21398626473452756,
+      "ora": 0.7977398461317364,
+      "num_rounds": 5,
+      "optimal_rounds": 7,
+      "token_cost": 3569,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 3,
+          "effective": 1,
+          "effectiveness_ratio": 0.3333333333333333
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_38",
+      "total_requirements": 5,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.4,
+      "tkqr": 0.38356636737133565,
+      "ora": 0.9259884638128468,
+      "num_rounds": 5,
+      "optimal_rounds": 6,
+      "token_cost": 3902,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 3,
+          "effective": 2,
+          "effectiveness_ratio": 0.6666666666666666
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_39",
+      "total_requirements": 5,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.6,
+      "tkqr": 0.8687949224876582,
+      "ora": 0.9259884638128468,
+      "num_rounds": 5,
+      "optimal_rounds": 6,
+      "token_cost": 4631,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 4,
+          "effective": 4,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_40",
+      "total_requirements": 3,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.8411288833576084,
+      "num_rounds": 5,
+      "optimal_rounds": 4,
+      "token_cost": 3864,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_41",
+      "total_requirements": 7,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.8411288833576084,
+      "num_rounds": 6,
+      "optimal_rounds": 8,
+      "token_cost": 4474,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 4,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_42",
+      "total_requirements": 3,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.21074773581840714,
+      "num_rounds": 7,
+      "optimal_rounds": 4,
+      "token_cost": 5822,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 6,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_43",
+      "total_requirements": 7,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.42857142857142855,
+      "tkqr": 0.4292486164007478,
+      "ora": 0.957669456847167,
+      "num_rounds": 9,
+      "optimal_rounds": 8,
+      "token_cost": 8673,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 4,
+          "effective": 1,
+          "effectiveness_ratio": 0.25
+        },
+        "clarify": {
+          "total": 4,
+          "effective": 2,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_44",
+      "total_requirements": 10,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.1,
+      "tkqr": 0.5531464700081437,
+      "ora": 0.43885482942382986,
+      "num_rounds": 5,
+      "optimal_rounds": 11,
+      "token_cost": 4110,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 1,
+          "elicitation_ratio": 0.25
+        },
+        "Content": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_45",
+      "total_requirements": 9,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.1111111111111111,
+      "tkqr": 0.24630238874073,
+      "ora": 0.3691545852736361,
+      "num_rounds": 4,
+      "optimal_rounds": 10,
+      "token_cost": 2898,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 4,
+          "elicited": 1,
+          "elicitation_ratio": 0.25
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_46",
+      "total_requirements": 8,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.125,
+      "tkqr": 0.44149241373678083,
+      "ora": 0.4255502464232445,
+      "num_rounds": 4,
+      "optimal_rounds": 9,
+      "token_cost": 3128,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_47",
+      "total_requirements": 8,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.375,
+      "tkqr": 0.7041249493150387,
+      "ora": 0.8722322402261251,
+      "num_rounds": 7,
+      "optimal_rounds": 9,
+      "token_cost": 6257,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 5,
+          "effective": 4,
+          "effectiveness_ratio": 0.8
+        },
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 2,
+          "elicitation_ratio": 0.6666666666666666
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_48",
+      "total_requirements": 7,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.16958010263680806,
+      "ora": 0.677549032331932,
+      "num_rounds": 5,
+      "optimal_rounds": 8,
+      "token_cost": 3786,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 3,
+          "effective": 1,
+          "effectiveness_ratio": 0.3333333333333333
+        },
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_49",
+      "total_requirements": 4,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.4144299250118475,
+      "ora": 0.8951834196045215,
+      "num_rounds": 6,
+      "optimal_rounds": 5,
+      "token_cost": 4579,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 3,
+          "effective": 2,
+          "effectiveness_ratio": 0.6666666666666666
+        },
+        "probe": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_50",
+      "total_requirements": 11,
+      "total_elicited": 4,
+      "elicitation_ratio": 0.36363636363636365,
+      "tkqr": 0.7899917627398735,
+      "ora": 0.6184218862373007,
+      "num_rounds": 7,
+      "optimal_rounds": 12,
+      "token_cost": 6297,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "probe": {
+          "total": 4,
+          "effective": 4,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 6,
+          "elicited": 4,
+          "elicitation_ratio": 0.6666666666666666
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_51",
+      "total_requirements": 8,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.25,
+      "tkqr": 0.7349468987069968,
+      "ora": 0.8722322402261251,
+      "num_rounds": 7,
+      "optimal_rounds": 9,
+      "token_cost": 6776,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 4,
+          "effective": 4,
+          "effectiveness_ratio": 1.0
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_52",
+      "total_requirements": 7,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.7227265726449519,
+      "ora": 0.677549032331932,
+      "num_rounds": 5,
+      "optimal_rounds": 8,
+      "token_cost": 4154,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_53",
+      "total_requirements": 11,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.14606834984270645,
+      "ora": 0.38986864448146563,
+      "num_rounds": 5,
+      "optimal_rounds": 12,
+      "token_cost": 3614,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 4,
+          "effective": 1,
+          "effectiveness_ratio": 0.25
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 6,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_54",
+      "total_requirements": 7,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.2857142857142857,
+      "tkqr": 0.2558209594125084,
+      "ora": 0.957669456847167,
+      "num_rounds": 7,
+      "optimal_rounds": 8,
+      "token_cost": 5603,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 4,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_55",
+      "total_requirements": 9,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.1111111111111111,
+      "tkqr": 0.44149241373678083,
+      "ora": 0.3691545852736361,
+      "num_rounds": 4,
+      "optimal_rounds": 10,
+      "token_cost": 2785,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_56",
+      "total_requirements": 8,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.14606834984270645,
+      "ora": 0.5788000256012756,
+      "num_rounds": 5,
+      "optimal_rounds": 9,
+      "token_cost": 4023,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_57",
+      "total_requirements": 12,
+      "total_elicited": 4,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.7618870795651185,
+      "ora": 0.4481602680851034,
+      "num_rounds": 6,
+      "optimal_rounds": 13,
+      "token_cost": 5062,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 5,
+          "effective": 4,
+          "effectiveness_ratio": 0.8
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 2,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 6,
+          "elicited": 2,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_58",
+      "total_requirements": 7,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.42857142857142855,
+      "tkqr": 0.6645997082078611,
+      "ora": 0.8411288833576084,
+      "num_rounds": 10,
+      "optimal_rounds": 8,
+      "token_cost": 10216,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 5,
+          "effective": 1,
+          "effectiveness_ratio": 0.2
+        },
+        "probe": {
+          "total": 4,
+          "effective": 3,
+          "effectiveness_ratio": 0.75
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 2,
+          "elicitation_ratio": 0.6666666666666666
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_59",
+      "total_requirements": 11,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.18181818181818182,
+      "tkqr": 0.647939623894138,
+      "ora": 0.7352284512792991,
+      "num_rounds": 8,
+      "optimal_rounds": 12,
+      "token_cost": 7261,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 7,
+          "effective": 4,
+          "effectiveness_ratio": 0.5714285714285714
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 1,
+          "elicitation_ratio": 0.25
+        },
+        "Content": {
+          "total": 5,
+          "elicited": 1,
+          "elicitation_ratio": 0.2
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_60",
+      "total_requirements": 8,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.25,
+      "tkqr": 0.7751482523375255,
+      "ora": 0.7352284512792991,
+      "num_rounds": 6,
+      "optimal_rounds": 9,
+      "token_cost": 5443,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 4,
+          "effective": 4,
+          "effectiveness_ratio": 1.0
+        },
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 1,
+          "elicitation_ratio": 0.25
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_61",
+      "total_requirements": 5,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.9259884638128468,
+      "num_rounds": 5,
+      "optimal_rounds": 6,
+      "token_cost": 3612,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 4,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_62",
+      "total_requirements": 6,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.3422220729283414,
+      "ora": 1.0,
+      "num_rounds": 7,
+      "optimal_rounds": 7,
+      "token_cost": 6039,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 3,
+          "effective": 2,
+          "effectiveness_ratio": 0.6666666666666666
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_63",
+      "total_requirements": 7,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.33914929209203315,
+      "num_rounds": 3,
+      "optimal_rounds": 8,
+      "token_cost": 2080,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_64",
+      "total_requirements": 4,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.8951834196045215,
+      "num_rounds": 4,
+      "optimal_rounds": 5,
+      "token_cost": 2821,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_65",
+      "total_requirements": 9,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.3691545852736361,
+      "num_rounds": 4,
+      "optimal_rounds": 10,
+      "token_cost": 3092,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 3,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_66",
+      "total_requirements": 9,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.24630238874073,
+      "ora": 0.3691545852736361,
+      "num_rounds": 4,
+      "optimal_rounds": 10,
+      "token_cost": 3139,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_67",
+      "total_requirements": 8,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.24630238874073,
+      "ora": 0.4255502464232445,
+      "num_rounds": 4,
+      "optimal_rounds": 9,
+      "token_cost": 2794,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_68",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.24630238874073,
+      "ora": 0.6014338831341747,
+      "num_rounds": 4,
+      "optimal_rounds": 7,
+      "token_cost": 2813,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_69",
+      "total_requirements": 5,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.2,
+      "tkqr": 0.36005461457723403,
+      "ora": 0.9259884638128468,
+      "num_rounds": 7,
+      "optimal_rounds": 6,
+      "token_cost": 5809,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 2,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_70",
+      "total_requirements": 3,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.8411288833576084,
+      "num_rounds": 3,
+      "optimal_rounds": 4,
+      "token_cost": 1978,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_71",
+      "total_requirements": 4,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.8318724637288826,
+      "ora": 0.6421671991447901,
+      "num_rounds": 7,
+      "optimal_rounds": 5,
+      "token_cost": 6908,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 1,
+          "effectiveness_ratio": 0.25
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_72",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.3212446320893053,
+      "ora": 0.9450729246636724,
+      "num_rounds": 6,
+      "optimal_rounds": 7,
+      "token_cost": 5531,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 2,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_73",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.21398626473452756,
+      "ora": 0.7977398461317364,
+      "num_rounds": 5,
+      "optimal_rounds": 7,
+      "token_cost": 3802,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_74",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.14606834984270645,
+      "ora": 0.7977398461317364,
+      "num_rounds": 5,
+      "optimal_rounds": 7,
+      "token_cost": 4178,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_75",
+      "total_requirements": 8,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.125,
+      "tkqr": 0.3422220729283414,
+      "ora": 0.7352284512792991,
+      "num_rounds": 6,
+      "optimal_rounds": 9,
+      "token_cost": 4348,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 5,
+          "effective": 2,
+          "effectiveness_ratio": 0.4
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_76",
+      "total_requirements": 8,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.0,
+      "ora": 0.18738881240380276,
+      "num_rounds": 2,
+      "optimal_rounds": 9,
+      "token_cost": 1296,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 5,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_77",
+      "total_requirements": 3,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.7653606369886217,
+      "ora": 0.8411288833576084,
+      "num_rounds": 5,
+      "optimal_rounds": 4,
+      "token_cost": 3728,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 4,
+          "effective": 2,
+          "effectiveness_ratio": 0.5
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_78",
+      "total_requirements": 8,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.375,
+      "tkqr": 0.6233173655322678,
+      "ora": 0.9664024757286372,
+      "num_rounds": 8,
+      "optimal_rounds": 9,
+      "token_cost": 7442,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 5,
+          "effective": 4,
+          "effectiveness_ratio": 0.8
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 1,
+          "elicitation_ratio": 0.25
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_79",
+      "total_requirements": 9,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.1111111111111111,
+      "tkqr": 0.7713707099946513,
+      "ora": 0.6421671991447901,
+      "num_rounds": 14,
+      "optimal_rounds": 10,
+      "token_cost": 16505,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 9,
+          "effective": 6,
+          "effectiveness_ratio": 0.6666666666666666
+        },
+        "clarify": {
+          "total": 4,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 6,
+          "elicited": 1,
+          "elicitation_ratio": 0.16666666666666666
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_80",
+      "total_requirements": 10,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.2,
+      "tkqr": 0.38356636737133565,
+      "ora": 0.43885482942382986,
+      "num_rounds": 5,
+      "optimal_rounds": 11,
+      "token_cost": 3609,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 3,
+          "effective": 2,
+          "effectiveness_ratio": 0.6666666666666666
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 5,
+          "elicited": 1,
+          "elicitation_ratio": 0.2
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_81",
+      "total_requirements": 7,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.2857142857142857,
+      "tkqr": 0.47254583883871204,
+      "ora": 0.8411288833576084,
+      "num_rounds": 6,
+      "optimal_rounds": 8,
+      "token_cost": 5158,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 3,
+          "effectiveness_ratio": 0.75
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_82",
+      "total_requirements": 10,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.2,
+      "tkqr": 0.5296347172140421,
+      "ora": 0.43885482942382986,
+      "num_rounds": 5,
+      "optimal_rounds": 11,
+      "token_cost": 4176,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 3,
+          "effective": 3,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 5,
+          "elicited": 1,
+          "elicitation_ratio": 0.2
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_83",
+      "total_requirements": 7,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.5296347172140421,
+      "ora": 0.677549032331932,
+      "num_rounds": 5,
+      "optimal_rounds": 8,
+      "token_cost": 4100,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 3,
+          "effective": 3,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_84",
+      "total_requirements": 8,
+      "total_elicited": 4,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.8358912271816661,
+      "ora": 1.0,
+      "num_rounds": 9,
+      "optimal_rounds": 9,
+      "token_cost": 9021,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 6,
+          "effective": 6,
+          "effectiveness_ratio": 1.0
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 3,
+          "elicitation_ratio": 0.75
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_85",
+      "total_requirements": 7,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.2857142857142857,
+      "tkqr": 0.6548086577531307,
+      "ora": 0.677549032331932,
+      "num_rounds": 5,
+      "optimal_rounds": 8,
+      "token_cost": 3574,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "probe": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_86",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.44149241373678083,
+      "ora": 0.6014338831341747,
+      "num_rounds": 4,
+      "optimal_rounds": 7,
+      "token_cost": 2980,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_87",
+      "total_requirements": 4,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.8048099750039491,
+      "ora": 1.0,
+      "num_rounds": 5,
+      "optimal_rounds": 5,
+      "token_cost": 4448,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 3,
+          "effective": 3,
+          "effectiveness_ratio": 1.0
+        },
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_88",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.16958010263680806,
+      "ora": 0.7977398461317364,
+      "num_rounds": 5,
+      "optimal_rounds": 7,
+      "token_cost": 3812,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 2,
+          "effective": 1,
+          "effectiveness_ratio": 0.5
+        },
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_89",
+      "total_requirements": 9,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.1111111111111111,
+      "tkqr": 0.27487633291429087,
+      "ora": 0.7794747776490637,
+      "num_rounds": 7,
+      "optimal_rounds": 10,
+      "token_cost": 5439,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 6,
+          "effective": 1,
+          "effectiveness_ratio": 0.16666666666666666
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 5,
+          "elicited": 1,
+          "elicitation_ratio": 0.2
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_90",
+      "total_requirements": 6,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.2816249726597774,
+      "ora": 0.9450729246636724,
+      "num_rounds": 6,
+      "optimal_rounds": 7,
+      "token_cost": 4916,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 4,
+          "effective": 2,
+          "effectiveness_ratio": 0.5
+        },
+        "probe": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_91",
+      "total_requirements": 6,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.47254583883871204,
+      "ora": 0.9450729246636724,
+      "num_rounds": 6,
+      "optimal_rounds": 7,
+      "token_cost": 4620,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 4,
+          "effective": 3,
+          "effectiveness_ratio": 0.75
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_92",
+      "total_requirements": 3,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.3333333333333333,
+      "tkqr": 0.2960819109658652,
+      "ora": 0.21074773581840714,
+      "num_rounds": 7,
+      "optimal_rounds": 4,
+      "token_cost": 6099,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 6,
+          "effective": 1,
+          "effectiveness_ratio": 0.16666666666666666
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 1,
+          "elicitation_ratio": 1.0
+        },
+        "Content": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_93",
+      "total_requirements": 7,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.2857142857142857,
+      "tkqr": 0.38356636737133565,
+      "ora": 0.677549032331932,
+      "num_rounds": 5,
+      "optimal_rounds": 8,
+      "token_cost": 4219,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 3,
+          "effective": 1,
+          "effectiveness_ratio": 0.3333333333333333
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_94",
+      "total_requirements": 8,
+      "total_elicited": 3,
+      "elicitation_ratio": 0.375,
+      "tkqr": 0.5666867828578932,
+      "ora": 0.8722322402261251,
+      "num_rounds": 7,
+      "optimal_rounds": 9,
+      "token_cost": 5464,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 5,
+          "effective": 2,
+          "effectiveness_ratio": 0.4
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 2,
+          "elicitation_ratio": 0.6666666666666666
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_95",
+      "total_requirements": 4,
+      "total_elicited": 2,
+      "elicitation_ratio": 0.5,
+      "tkqr": 0.4144299250118475,
+      "ora": 0.1700562018282703,
+      "num_rounds": 9,
+      "optimal_rounds": 5,
+      "token_cost": 8098,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 5,
+          "effective": 1,
+          "effectiveness_ratio": 0.2
+        },
+        "probe": {
+          "total": 3,
+          "effective": 1,
+          "effectiveness_ratio": 0.3333333333333333
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 0,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 2,
+          "elicitation_ratio": 1.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_96",
+      "total_requirements": 8,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.44149241373678083,
+      "ora": 0.4255502464232445,
+      "num_rounds": 4,
+      "optimal_rounds": 9,
+      "token_cost": 3022,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 4,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_97",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.44149241373678083,
+      "ora": 0.6014338831341747,
+      "num_rounds": 4,
+      "optimal_rounds": 7,
+      "token_cost": 3179,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 2,
+          "effective": 2,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_98",
+      "total_requirements": 11,
+      "total_elicited": 0,
+      "elicitation_ratio": 0.0,
+      "tkqr": 0.24630238874073,
+      "ora": 0.29220606019760687,
+      "num_rounds": 4,
+      "optimal_rounds": 12,
+      "token_cost": 3534,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 2,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 1,
+          "effective": 1,
+          "effectiveness_ratio": 1.0
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 6,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_99",
+      "total_requirements": 10,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.1,
+      "tkqr": 0.36005461457723403,
+      "ora": 0.43885482942382986,
+      "num_rounds": 5,
+      "optimal_rounds": 11,
+      "token_cost": 4002,
+      "action_type_effectiveness": {
+        "clarify": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        },
+        "probe": {
+          "total": 3,
+          "effective": 2,
+          "effectiveness_ratio": 0.6666666666666666
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 2,
+          "elicited": 1,
+          "elicitation_ratio": 0.5
+        },
+        "Content": {
+          "total": 6,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    },
+    {
+      "task_id": "task_100",
+      "total_requirements": 6,
+      "total_elicited": 1,
+      "elicitation_ratio": 0.16666666666666666,
+      "tkqr": 0.5296347172140421,
+      "ora": 0.7977398461317364,
+      "num_rounds": 5,
+      "optimal_rounds": 7,
+      "token_cost": 4274,
+      "action_type_effectiveness": {
+        "probe": {
+          "total": 4,
+          "effective": 3,
+          "effectiveness_ratio": 0.75
+        },
+        "finish": {
+          "total": 1,
+          "effective": 0,
+          "effectiveness_ratio": 0.0
+        }
+      },
+      "aspect_type_elicitation": {
+        "Interaction": {
+          "total": 1,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        },
+        "Content": {
+          "total": 3,
+          "elicited": 1,
+          "elicitation_ratio": 0.3333333333333333
+        },
+        "Style": {
+          "total": 2,
+          "elicited": 0,
+          "elicitation_ratio": 0.0
+        }
+      }
+    }
+  ]
+}
