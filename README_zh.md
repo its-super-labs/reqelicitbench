@@ -5,7 +5,7 @@
 
 **ReqElicitBench** 是论文 **ReqElicitGym: An Evaluation Environment for Interview Competence in Conversational Requirements Elicitation** 的官方实现与基准评测代码仓库。
 
-论文作者：Dongming Jin, Zhi Jin*, Zheng Fang, Linyu Li, Xiaotian Yang, Yuanpeng He, Xiaohong Chen（TOSEM 2025）
+论文作者：Dongming Jin, Zhi Jin*, Zheng Fang, Linyu Li, Xiaotian Yang, Yuanpeng He, Xiaohong Chen
 
 **语言**：[English](README.md) | [中文](README_zh.md)
 

@@ -6,7 +6,7 @@
 **ReqElicitBench** is the official implementation and benchmark code for the paper:
 
 **ReqElicitGym: An Evaluation Environment for Interview Competence in Conversational Requirements Elicitation**  
-Dongming Jin, Zhi Jin*, Zheng Fang, Linyu Li, Xiaotian Yang, Yuanpeng He, Xiaohong Chen (TOSEM 2025)
+Dongming Jin, Zhi Jin*, Zheng Fang, Linyu Li, Xiaotian Yang, Yuanpeng He, Xiaohong Chen
 
 **Language**: [English](README.md) | [中文](README_zh.md)
 
