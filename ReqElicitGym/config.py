@@ -18,7 +18,7 @@ class ReqElicitGymConfig:
     judge_base_url: Optional[str] = None
     judge_model_name: str = "gpt-5.1"
     judge_temperature: float = 0
-    judge_max_tokens: int = 1024
+    judge_max_tokens: int = 4096
     judge_timeout: float = 30.0
     
     # Model configuration for simulated user (GPT-5.1)
@@ -26,7 +26,7 @@ class ReqElicitGymConfig:
     user_base_url: Optional[str] = None
     user_model_name: str = "gpt-5.1"
     user_temperature: float = 0.7
-    user_max_tokens: int = 1024
+    user_max_tokens: int = 4096
     user_timeout: float = 30.0
 
     # User answer quality levels: "high", "medium", "low"

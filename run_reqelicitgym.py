@@ -119,14 +119,14 @@ def main():
         judge_base_url=judge_base_url,
         judge_model_name=gym_model,
         judge_temperature=0.0,
-        judge_max_tokens=1024,
+        judge_max_tokens=4096,
         judge_timeout=30.0,
         # 模拟用户配置
         user_api_key=user_api_key,
         user_base_url=user_base_url,
         user_model_name=gym_model,
         user_temperature=0.7,
-        user_max_tokens=1024,
+        user_max_tokens=4096,
         user_timeout=30.0,
         # 用户回答质量
         user_answer_quality="high",  # 可以是 "high", "medium", 或 "low"
@@ -154,7 +154,7 @@ def main():
 
     # 构建 interviewer（在外部构建，不依赖环境配置）
     # 如果开启 thinking，需要更大的 max_tokens
-    interviewer_max_tokens = 8192 if use_thinking else 1024
+    interviewer_max_tokens = 8192 if use_thinking else 4096
     interviewer = Interviewer(
         api_key=api_key,
         base_url=base_url,
