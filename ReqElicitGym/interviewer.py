@@ -27,6 +27,7 @@ class Interviewer:
         max_tokens: int = 2048,
         timeout: float = 30.0,
         use_thinking: bool = False,
+        extra_body: Optional[Dict[str, Any]] = None,
     ):
         """
         Initialize the Interviewer.
@@ -46,9 +47,9 @@ class Interviewer:
         self.temperature = temperature
         self.max_tokens = max_tokens
         self.timeout = timeout
-        # Whether to use thinking-enabled model call
         self.use_thinking = use_thinking
-        
+        self.extra_body = extra_body
+
         # Build model config dictionary
         self.model_config = {
             "api_key": self.api_key,
@@ -57,6 +58,7 @@ class Interviewer:
             "temperature": self.temperature,
             "max_tokens": self.max_tokens,
             "timeout": self.timeout,
+            "extra_body": self.extra_body,
         }
     
     def ask_question(self, conversation_history: List[Dict[str, str]], return_usage: bool = False) -> Any:

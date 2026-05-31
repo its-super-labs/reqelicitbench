@@ -318,8 +318,9 @@ class ReqElicitGym(gym.Env):
             "temperature": self.config.judge_temperature,
             "max_tokens": self.config.judge_max_tokens,
             "timeout": self.config.judge_timeout,
+            "extra_body": self.config.judge_extra_body,
         }
-        
+
         # create model config dict for evaluation
         user_simulator_config = {
             "api_key": self.config.user_api_key,
@@ -328,6 +329,7 @@ class ReqElicitGym(gym.Env):
             "temperature": self.config.user_temperature,
             "max_tokens": self.config.user_max_tokens,
             "timeout": self.config.user_timeout,
+            "extra_body": self.config.user_extra_body,
         }
 
         user_quality_level = self.config.user_answer_quality
@@ -988,7 +990,16 @@ class ReqElicitGym(gym.Env):
             if self.config.verbose:
                 print(f"\n任务 {task_num} 完成: 总轮数={len(self.current_task_conversation_turns)}, "
                       f"已获取需求数={len(self.elicited_requirements)}")
-            
+
+            # Save incrementally after each task so results aren't lost on crash
+            try:
+                if self.config.evaluation_result_path:
+                    self.save_evaluation_results(file_path=None, interviewer_model_name=self.interviewer_model_name)
+                if self.config.conversation_result_path:
+                    self.save_conversation_results(file_path=None)
+            except Exception as e:
+                print(f"增量保存失败 (任务 {task_num}): {e}")
+
             task_num += 1
             
             # Safety check to prevent infinite loop

@@ -14,8 +14,6 @@ import json
 import sys
 import argparse
 
-from numpy._core.numeric import True_
-
 # 添加当前目录到 Python 路径，以便导入 ReqElicitGym
 current_dir = os.path.dirname(os.path.abspath(__file__))
 if current_dir not in sys.path:
@@ -35,6 +33,7 @@ def build_parser():
     parser.add_argument("--interviewer-model", type=str, default=None, help="Interviewer 使用的 LLM 模型")
     parser.add_argument("--gym-model", type=str, default="gpt-5.2", help="GYM（judge + user）使用的 LLM 模型，默认 gpt-5.2")
     parser.add_argument("--use-thinking", action="store_true", help="是否开启 thinking 模式（会调用带 enable_thinking 的接口）")
+    parser.add_argument("--extra-body", type=str, default=None, help='Interviewer API extra_body JSON，例如 \'{"enable_thinking": true}\' 或 \'{"thinking": {"type": "enabled"}}\'')
     parser.add_argument("--data-path", type=str, default=None, help="测试数据文件路径，默认 ReqElicitGym/data/test.json")
     parser.add_argument("--verbose", action="store_true", help="详细输出")
     return parser
@@ -63,6 +62,7 @@ def main():
     use_thinking = args.use_thinking or DEFAULTS["use_thinking"]
     data_path = args.data_path or DEFAULTS["data_path"]
     verbose = args.verbose or DEFAULTS["verbose"]
+    extra_body = json.loads(args.extra_body) if args.extra_body else None
     
     # 统一使用同一套 API key 和 base URL
     # 如需对 judge/user 再细分 key，可以继续用 JUDGE_API_KEY / USER_API_KEY 覆盖
@@ -121,6 +121,7 @@ def main():
         judge_temperature=0.0,
         judge_max_tokens=4096,
         judge_timeout=30.0,
+        judge_extra_body=None,
         # 模拟用户配置
         user_api_key=user_api_key,
         user_base_url=user_base_url,
@@ -128,6 +129,7 @@ def main():
         user_temperature=0.7,
         user_max_tokens=4096,
         user_timeout=30.0,
+        user_extra_body=None,
         # 用户回答质量
         user_answer_quality="high",  # 可以是 "high", "medium", 或 "low"
         # 环境设置
@@ -164,6 +166,7 @@ def main():
         # timeout=30.0,
         timeout=60.0, # kimi2.5的timeout是60秒
         use_thinking=use_thinking,
+        extra_body=extra_body,
     )
     print(f"Interviewer 已创建: {interviewer}")
 

@@ -43,16 +43,19 @@ def model_call(
     try_time = 0
     while try_time < 3:
         try:
-            response = client.chat.completions.create(
+            kwargs = dict(
                 model=model_config["model_name"],
                 messages=messages,
                 temperature=model_config["temperature"],
                 max_tokens=model_config["max_tokens"],
                 timeout=model_config["timeout"],
-                # extra_body={"enable_thinking": False} # Qwen3-235B-A22B-Thinking-2507的设置, 不传默认思考
-                # extra_body={"thinking": {"type": "disabled"}} # kimi2.5的设置
             )
-            response_text = response.choices[0].message.content.strip()
+            if model_config.get("extra_body"):
+                kwargs["extra_body"] = model_config["extra_body"]
+            response = client.chat.completions.create(**kwargs)
+            # content can be None when a model (e.g. Gemini 2.5) exhausts
+            # max_tokens on thinking tokens before producing any text output
+            response_text = (response.choices[0].message.content or "").strip()
             
             # Extract usage information
             usage_info = None
@@ -130,19 +133,19 @@ def model_call_with_thinking(
     try_time = 0
     while try_time < 3:
         try:
+            extra_body = model_config.get("extra_body") or {"enable_thinking": True}
             response = client.chat.completions.create(
                 model=model_config["model_name"],
                 messages=messages,
                 temperature=model_config["temperature"],
                 max_tokens=model_config["max_tokens"],
                 timeout=model_config["timeout"],
-                # extra_body={"enable_thinking": True} # glm-4.7的设置
-                # extra_body={"thinking": {"type": "enabled"}} # deepseek-v3.2的设置
-                # kimi2.5默认开启thinking, 这里不需要设置
-                extra_body={"enable_thinking": True} # Qwen3-235B-A22B-Instruct-2507的设置
-                
+                extra_body=extra_body,
+                # extra_body={"enable_thinking": True} # glm-4.7 / Qwen3
+                # extra_body={"thinking": {"type": "enabled"}} # deepseek-v3.2
+                # kimi2.5 enables thinking by default, no extra_body needed
             )
-            response_text = response.choices[0].message.content.strip()
+            response_text = (response.choices[0].message.content or "").strip()
             
             # Extract usage information
             usage_info = None

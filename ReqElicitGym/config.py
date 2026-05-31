@@ -20,7 +20,8 @@ class ReqElicitGymConfig:
     judge_temperature: float = 0
     judge_max_tokens: int = 4096
     judge_timeout: float = 30.0
-    
+    judge_extra_body: Optional[Dict[str, Any]] = None
+
     # Model configuration for simulated user (GPT-5.1)
     user_api_key: Optional[str] = None
     user_base_url: Optional[str] = None
@@ -28,6 +29,7 @@ class ReqElicitGymConfig:
     user_temperature: float = 0.7
     user_max_tokens: int = 4096
     user_timeout: float = 30.0
+    user_extra_body: Optional[Dict[str, Any]] = None
 
     # User answer quality levels: "high", "medium", "low"
     user_answer_quality: str = "high"
