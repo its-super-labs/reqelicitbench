@@ -1,0 +1,19 @@
+[project]
+name = "reqelicitbench"
+version = "0.1.0"
+description = "Evaluation environment for interview competence in conversational requirements elicitation"
+requires-python = ">=3.14"
+dependencies = [
+    "gymnasium>=0.26.0",
+    "numpy>=1.21.0",
+    "pyyaml>=6.0",
+    "openai",
+    "together",
+    "google-genai",
+    "boto3",
+    "pyarrow",
+    "fastparquet",
+]
+
+[dependency-groups]
+dev = []
