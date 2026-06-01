@@ -785,24 +785,24 @@ class ReqElicitGym(gym.Env):
             num_tasks = len(stats["tasks"])
             if num_tasks == 0:
                 continue
-            
-            # Calculate averages
-            avg_er = sum(stats["elicitation_ratios"]) / num_tasks
-            avg_tkqr = sum(stats["tkqr_values"]) / num_tasks
-            avg_ora = sum(stats["ora_values"]) / num_tasks
-            
+
+            # Calculate averages (use cat_ prefix to avoid shadowing the outer-scope overall averages)
+            cat_avg_er = sum(stats["elicitation_ratios"]) / num_tasks
+            cat_avg_tkqr = sum(stats["tkqr_values"]) / num_tasks
+            cat_avg_ora = sum(stats["ora_values"]) / num_tasks
+
             # Calculate variances
-            var_er = calculate_variance(stats["elicitation_ratios"], avg_er)
-            var_tkqr = calculate_variance(stats["tkqr_values"], avg_tkqr)
-            var_ora = calculate_variance(stats["ora_values"], avg_ora)
-            
+            var_er = calculate_variance(stats["elicitation_ratios"], cat_avg_er)
+            var_tkqr = calculate_variance(stats["tkqr_values"], cat_avg_tkqr)
+            var_ora = calculate_variance(stats["ora_values"], cat_avg_ora)
+
             application_type_results[app_type] = {
                 "num_tasks": num_tasks,
-                "average_elicitation_ratio": avg_er,
+                "average_elicitation_ratio": cat_avg_er,
                 "variance_elicitation_ratio": var_er,
-                "average_tkqr": avg_tkqr,
+                "average_tkqr": cat_avg_tkqr,
                 "variance_tkqr": var_tkqr,
-                "average_ora": avg_ora,
+                "average_ora": cat_avg_ora,
                 "variance_ora": var_ora,
             }
         
