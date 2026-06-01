@@ -42,7 +42,7 @@ class ReqElicitGym(gym.Env):
             random.seed(self.config.seed)
             np.random.seed(self.config.seed)
 
-        # Load all tasks from data file (简化：直接加载所有任务，按顺序运行)
+        # Load all tasks from data file (simplified: load all tasks and run them in order)
         self.current_task_index = 0
         self._load_tasks()
         
@@ -100,15 +100,15 @@ class ReqElicitGym(gym.Env):
         self.reset()
 
     def _load_tasks(self):
-        """Load all tasks from data file (简化：直接加载所有任务)."""
+        """Load all tasks from data file (simplified: load all tasks directly)."""
         self.tasks = load_tasks(self.config.data_path)
         if self.config.verbose:
             print(f"Loaded {len(self.tasks)} tasks from {self.config.data_path}")
         
     def _get_next_task(self):
-        """Get the next task in sequence (按顺序返回任务)."""
+        """Get the next task in sequence (returns tasks in order)."""
         if self.current_task_index >= len(self.tasks):
-            # 如果所有任务都跑完了，抛出异常
+            # Raise an exception when all tasks have been completed
             raise StopIteration(f"All tasks completed. Total tasks: {len(self.tasks)}")
         
         task = self.tasks[self.current_task_index]
@@ -139,14 +139,14 @@ class ReqElicitGym(gym.Env):
         self.conversation_history = []
         self.elicited_requirements = []
 
-        # Get a new task (按顺序获取下一个任务)
+        # Get a new task (fetch next task in sequence)
         try:
             self.current_task = self._get_next_task()
         except StopIteration as e:
-            # 所有任务已完成
+            # All tasks have been completed
             if self.config.verbose:
-                print(f"所有任务已完成: {e}")
-            # 返回一个表示任务已完成的观察和信息
+                print(f"All tasks completed: {e}")
+            # Return an observation and info indicating all tasks are done
             observation = {
                 "task_description": "All tasks completed",
                 "goal": "All tasks completed",
@@ -211,7 +211,7 @@ class ReqElicitGym(gym.Env):
         self._record_step_statistics()
         
         # Build observation
-        # v7 格式：使用 name, application_type, initial_requirements 等字段
+        # v7 format: uses name, application_type, initial_requirements, etc.
         task_description = f"System Name: {self.current_task.get('name', 'N/A')}\n"
         task_description += f"Application Type: {self.current_task.get('application_type', 'N/A')}\n"
         task_description += f"Initial Requirements: {self.current_task.get('initial_requirements', 'N/A')}"
@@ -247,26 +247,26 @@ class ReqElicitGym(gym.Env):
         return observation, info
 
     def _initialize_requirements(self):
-        """Initialize requirements tracking from the current task (适配 v7 格式)."""
+        """Initialize requirements tracking from the current task (adapted for v7 format)."""
         self.remaining_requirements = []
 
-        # Extract implicit requirements from task data (v7 格式: "Implicit Requirements")
+        # Extract implicit requirements from task data (v7 format: "Implicit Requirements")
         implicit_requirements = self.current_task.get("Implicit Requirements", [])
 
         implicit_req_id_counter = 1
         for req_data in implicit_requirements:
-            # v7 格式: {"Aspect": "...", "RequirementText": "..."}，没有 "Corresponding User Story" 字段
+            # v7 format: {"Aspect": "...", "RequirementText": "..."}, no "Corresponding User Story" field
             aspect = req_data.get("Aspect", "")
             requirement_text = req_data.get("RequirementText", "")
-            
-            # 根据 Aspect 确定维度：Interaction/Content -> FR, Style -> NFR
-            # 也可以根据实际需求调整
+
+            # Determine dimension from Aspect: Interaction/Content -> FR, Style -> NFR
+            # Can be adjusted based on actual requirements
             dimension = "NFR" if aspect == "Style" else "FR"
-            
+
             implicit_req = {
                 "id": f"IR{implicit_req_id_counter}",
                 "aspect": aspect,
-                "requirement": requirement_text,  # 使用 requirement 字段名以保持兼容
+                "requirement": requirement_text,  # Use "requirement" field name for compatibility
                 "dimension": dimension,
                 "elicited": False
             }
@@ -430,11 +430,11 @@ class ReqElicitGym(gym.Env):
             terminated = False
             truncated = False
 
-        # v7 格式：使用 name, application_type, initial_requirements 等字段
+        # v7 format: uses name, application_type, initial_requirements, etc.
         task_description = f"System Name: {self.current_task.get('name', 'N/A')}\n"
         task_description += f"Application Type: {self.current_task.get('application_type', 'N/A')}\n"
         task_description += f"Initial Requirements: {self.current_task.get('initial_requirements', 'N/A')}"
-        
+
         observation = {
             "task_description": task_description,
             "goal": "Elicit requirements and write user requirements list if elicit enough requirements",
@@ -892,7 +892,7 @@ class ReqElicitGym(gym.Env):
         task_num = 1
         
         print("\n" + "="*60)
-        print("开始运行所有任务")
+        print("Starting all tasks")
         print("="*60)
         
         while True:
@@ -900,7 +900,7 @@ class ReqElicitGym(gym.Env):
             try:
                 observation, info = self.reset()
             except Exception as e:
-                print(f"重置环境失败: {e}")
+                print(f"Failed to reset environment: {e}")
                 import traceback
                 traceback.print_exc()
                 break
@@ -908,7 +908,7 @@ class ReqElicitGym(gym.Env):
             # Check if all tasks are completed
             if info.get("all_tasks_completed", False):
                 if self.config.verbose:
-                    print(f"\n所有任务已完成！")
+                    print("\nAll tasks completed!")
                 break
             
             task_id = info.get("task_id", f"task_{task_num}")
@@ -916,20 +916,20 @@ class ReqElicitGym(gym.Env):
             
             if self.config.verbose:
                 print(f"\n{'='*60}")
-                print(f"任务 {task_num}/{total_tasks}: {task_id}")
+                print(f"Task {task_num}/{total_tasks}: {task_id}")
                 print(f"{'='*60}")
-                print(f"系统名称: {task_data.get('name', 'N/A')}")
-                print(f"应用类型: {task_data.get('application_type', 'N/A')}")
-                print(f"初始需求: {task_data.get('initial_requirements', 'N/A')[:100]}...")
-                print(f"总需求数: {observation.get('total_requirements', 0)}")
-                print(f"\n开始对话...\n")
+                print(f"System Name: {task_data.get('name', 'N/A')}")
+                print(f"Application Type: {task_data.get('application_type', 'N/A')}")
+                print(f"Initial Requirements: {task_data.get('initial_requirements', 'N/A')[:100]}...")
+                print(f"Total Requirements: {observation.get('total_requirements', 0)}")
+                print("\nStarting conversation...\n")
             
             # Run conversation for current task
             step = 0
             while step < self.config.max_steps:
                 # Generate interviewer question
                 if self.config.verbose:
-                    print(f"[轮次 {step + 1}]")
+                    print(f"[Round {step + 1}]")
                 
                 try:
                     interviewer_question, usage_info = interviewer.ask_question(
@@ -940,21 +940,21 @@ class ReqElicitGym(gym.Env):
                     if usage_info:
                         self.current_task_token_cost += usage_info.get("total_tokens", 0)
                 except Exception as e:
-                    print(f"生成 interviewer 问题失败: {e}")
+                    print(f"Failed to generate interviewer question: {e}")
                     import traceback
                     traceback.print_exc()
-                    print("结束对话")
+                    print("Ending conversation")
                     break
-                
+
                 if not interviewer_question:
-                    print("无法生成 interviewer 问题。结束对话。")
+                    print("Unable to generate interviewer question. Ending conversation.")
                     break
                 
                 # Execute environment step
                 try:
                     observation, reward, terminated, truncated, info = self.step(interviewer_question)
                 except Exception as e:
-                    print(f"执行步骤失败: {e}")
+                    print(f"Failed to execute step: {e}")
                     import traceback
                     traceback.print_exc()
                     break
@@ -962,34 +962,34 @@ class ReqElicitGym(gym.Env):
                 action_info = info.get("action_info", {})
                 
                 if self.config.verbose:
-                    print(f"  动作类型: {action_info.get('action_type', 'unknown')}")
-                    print(f"  与隐式需求相关: {action_info.get('is_relevant_to_implied_requirements', False)}")
+                    print(f"  Action type: {action_info.get('action_type', 'unknown')}")
+                    print(f"  Relevant to implicit requirements: {action_info.get('is_relevant_to_implied_requirements', False)}")
                     relevant_req_id = action_info.get("relevant_implied_requirements_id")
                     if relevant_req_id:
-                        print(f"  相关需求 ID: {relevant_req_id}")
-                    print(f"  已获取的需求: {action_info.get('elicited_requirements', [])}")
+                        print(f"  Relevant requirement ID: {relevant_req_id}")
+                    print(f"  Elicited requirements: {action_info.get('elicited_requirements', [])}")
                     print(f"  Interviewer: {interviewer_question[:80]}...")
                     user_response = action_info.get("user_response", "")
                     if user_response:
                         print(f"  User: {user_response[:80]}...")
-                    print(f"  观察: 总需求={observation.get('total_requirements', 0)}, "
-                          f"剩余={observation.get('remaining_requirements', 0)}, "
-                          f"获取比例={observation.get('elicitation_ratio', 0.0):.2%}")
+                    print(f"  Observation: total_requirements={observation.get('total_requirements', 0)}, "
+                          f"remaining={observation.get('remaining_requirements', 0)}, "
+                          f"elicitation_ratio={observation.get('elicitation_ratio', 0.0):.2%}")
                 
                 step += 1
                 
                 if terminated or truncated:
                     if terminated:
                         if self.config.verbose:
-                            print(f"\n对话已终止（interviewer 完成）。")
+                            print("\nConversation terminated (interviewer finished).")
                     else:
                         if self.config.verbose:
-                            print(f"\n对话已截断（达到最大步数: {self.config.max_steps}）。")
+                            print(f"\nConversation truncated (reached max steps: {self.config.max_steps}).")
                     break
             
             if self.config.verbose:
-                print(f"\n任务 {task_num} 完成: 总轮数={len(self.current_task_conversation_turns)}, "
-                      f"已获取需求数={len(self.elicited_requirements)}")
+                print(f"\nTask {task_num} complete: total_turns={len(self.current_task_conversation_turns)}, "
+                      f"elicited_requirements={len(self.elicited_requirements)}")
 
             # Save incrementally after each task so results aren't lost on crash
             try:
@@ -998,62 +998,62 @@ class ReqElicitGym(gym.Env):
                 if self.config.conversation_result_path:
                     self.save_conversation_results(file_path=None)
             except Exception as e:
-                print(f"增量保存失败 (任务 {task_num}): {e}")
+                print(f"Incremental save failed (task {task_num}): {e}")
 
             task_num += 1
             
             # Safety check to prevent infinite loop
             if task_num > total_tasks:
                 if self.config.verbose:
-                    print(f"\n已运行所有 {total_tasks} 个任务，停止。")
+                    print(f"\nAll {total_tasks} tasks have been run. Stopping.")
                 break
         
         # Calculate overall evaluation metrics
         if self.config.verbose:
             print("\n" + "="*60)
-            print("计算总体评估指标...")
+            print("Calculating overall evaluation metrics...")
             print("="*60)
         
         overall_metrics = self.evaluate_all_tasks()
         
         if self.config.verbose:
-            print(f"\n总体评估结果:")
-            print(f"  总测试样本数: {overall_metrics['total_tasks']}")
-            print(f"  总隐式需求数: {overall_metrics['total_requirements_all_tasks']}")
-            print(f"  总获取数: {overall_metrics['total_elicited_all_tasks']}")
-            print(f"\n平均比例（基于测试样本平均）:")
-            print(f"  平均获取比例: {overall_metrics['elicitation_ratio']:.2%}")
-            print(f"  平均 TKQR: {overall_metrics['tkqr']:.4f}")
-            print(f"  平均 ORA: {overall_metrics['ora']:.4f}")
-            print(f"\n方差:")
-            print(f"  获取比例方差: {overall_metrics.get('variance_elicitation_ratio', 0.0):.6f}")
-            print(f"  TKQR 方差: {overall_metrics.get('variance_tkqr', 0.0):.6f}")
-            print(f"  ORA 方差: {overall_metrics.get('variance_ora', 0.0):.6f}")
-            print(f"\nToken消耗:")
-            print(f"  平均Token消耗: {overall_metrics.get('average_token_cost', 0.0):.2f}")
-            print(f"  Token消耗方差: {overall_metrics.get('variance_token_cost', 0.0):.6f}")
-            print(f"\n总体比例（基于总计数）:")
-            print(f"  总获取比例: {overall_metrics['elicitation_ratio_from_totals']:.2%}")
-            
+            print("\nOverall Evaluation Results:")
+            print(f"  Total test samples: {overall_metrics['total_tasks']}")
+            print(f"  Total implicit requirements: {overall_metrics['total_requirements_all_tasks']}")
+            print(f"  Total elicited: {overall_metrics['total_elicited_all_tasks']}")
+            print("\nAverage ratios (mean across test samples):")
+            print(f"  Average elicitation ratio: {overall_metrics['elicitation_ratio']:.2%}")
+            print(f"  Average TKQR: {overall_metrics['tkqr']:.4f}")
+            print(f"  Average ORA: {overall_metrics['ora']:.4f}")
+            print("\nVariances:")
+            print(f"  Elicitation ratio variance: {overall_metrics.get('variance_elicitation_ratio', 0.0):.6f}")
+            print(f"  TKQR variance: {overall_metrics.get('variance_tkqr', 0.0):.6f}")
+            print(f"  ORA variance: {overall_metrics.get('variance_ora', 0.0):.6f}")
+            print("\nToken usage:")
+            print(f"  Average token cost: {overall_metrics.get('average_token_cost', 0.0):.2f}")
+            print(f"  Token cost variance: {overall_metrics.get('variance_token_cost', 0.0):.6f}")
+            print("\nOverall ratio (based on total counts):")
+            print(f"  Total elicitation ratio: {overall_metrics['elicitation_ratio_from_totals']:.2%}")
+
             # Application type statistics
             if overall_metrics.get('application_type_statistics'):
-                print(f"\n按应用类型统计:")
+                print("\nStatistics by application type:")
                 for app_type, stats in overall_metrics['application_type_statistics'].items():
                     print(f"  {app_type}:")
-                    print(f"    任务数: {stats['num_tasks']}")
-                    print(f"    平均获取比例: {stats['average_elicitation_ratio']:.2%} (方差: {stats['variance_elicitation_ratio']:.6f})")
-                    print(f"    平均 TKQR: {stats['average_tkqr']:.4f} (方差: {stats['variance_tkqr']:.6f})")
-                    print(f"    平均 ORA: {stats['average_ora']:.4f} (方差: {stats['variance_ora']:.6f})")
-            
+                    print(f"    Tasks: {stats['num_tasks']}")
+                    print(f"    Average elicitation ratio: {stats['average_elicitation_ratio']:.2%} (variance: {stats['variance_elicitation_ratio']:.6f})")
+                    print(f"    Average TKQR: {stats['average_tkqr']:.4f} (variance: {stats['variance_tkqr']:.6f})")
+                    print(f"    Average ORA: {stats['average_ora']:.4f} (variance: {stats['variance_ora']:.6f})")
+
             # Action type effectiveness
             if overall_metrics.get('action_type_effectiveness'):
-                print(f"\n动作类型有效性:")
+                print("\nAction type effectiveness:")
                 for action_type, stats in overall_metrics['action_type_effectiveness'].items():
                     print(f"  {action_type}: {stats['effective']}/{stats['total']} = {stats['effectiveness_ratio']:.2%}")
-            
+
             # Aspect type elicitation
             if overall_metrics.get('aspect_type_elicitation'):
-                print(f"\n方面类型获取比例:")
+                print("\nAspect type elicitation ratios:")
                 for aspect, stats in overall_metrics['aspect_type_elicitation'].items():
                     if stats['total'] > 0:
                         print(f"  {aspect}: {stats['elicited']}/{stats['total']} = {stats['elicitation_ratio']:.2%}")
@@ -1081,7 +1081,7 @@ class ReqElicitGym(gym.Env):
         
         if not overall_metrics or overall_metrics.get("total_tasks", 0) == 0:
             if self.config.verbose:
-                print("警告: 没有评估结果可保存")
+                print("Warning: no evaluation results to save")
             return
         
         interviewer_model = interviewer_model_name or self.interviewer_model_name or "unknown"
@@ -1143,7 +1143,7 @@ class ReqElicitGym(gym.Env):
             json.dump(evaluation_data, f, ensure_ascii=False, indent=2)
         
         if self.config.verbose:
-            print(f"\n评估结果已保存到: {file_path}")
+            print(f"\nEvaluation results saved to: {file_path}")
     
     def save_conversation_results(self, file_path: Optional[str] = None):
         """
@@ -1162,15 +1162,15 @@ class ReqElicitGym(gym.Env):
         
         if not conversation_results:
             if self.config.verbose:
-                print("警告: 没有对话记录可保存")
+                print("Warning: no conversation records to save")
             return
         
         with open(file_path, 'w', encoding='utf-8') as f:
             json.dump(conversation_results, f, ensure_ascii=False, indent=2)
         
         if self.config.verbose:
-            print(f"对话过程已保存到: {file_path}")
-            print(f"  包含 {len(conversation_results)} 个任务的对话记录")
+            print(f"Conversation records saved to: {file_path}")
+            print(f"  Contains conversation records for {len(conversation_results)} tasks")
     
     def close(self):
         """Clean up the environment."""

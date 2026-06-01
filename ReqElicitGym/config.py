@@ -10,8 +10,8 @@ import os
 class ReqElicitGymConfig:
     """Configuration class for ReqElicitGym environments."""
 
-    # Data configuration - 简化：直接指定数据文件路径
-    data_path: str = "data/test.json"  # 数据文件路径
+    # Data configuration - simplified: specify data file path directly
+    data_path: str = "data/test.json"  # Path to data file
 
     # Model configuration for judge
     judge_api_key: Optional[str] = None
@@ -78,7 +78,7 @@ class ReqElicitGymConfig:
         if self.user_timeout <= 0:
             raise ValueError("user_timeout must be positive")
         
-        # 检查数据文件是否存在
+        # Check that the data file exists
         if not os.path.exists(self.data_path):
             raise FileNotFoundError(f"Data file not found: {self.data_path}")
 

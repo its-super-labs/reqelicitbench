@@ -101,7 +101,7 @@ Important: When you finish, you must generate a complete set of user stories tha
 
 Ask your next question to better understand the user's requirements, or finish the dialogue and generate a comprehensive set of user stories based on all the requirements you have elicited."""
         
-        # 根据是否开启 thinking 模式选择不同的模型调用函数
+        # Choose model call function based on whether thinking mode is enabled
         call_fn = model_call_with_thinking if self.use_thinking else model_call
 
         # Call model without JSON parsing (we want raw text for interviewer questions)

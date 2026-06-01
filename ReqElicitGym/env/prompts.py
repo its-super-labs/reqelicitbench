@@ -30,7 +30,7 @@ def model_call(
         If return_usage=True:
             Tuple of (response, usage_info) where usage_info is a dict with 'prompt_tokens', 'completion_tokens', 'total_tokens'
     """
-    # 支持可选的 base_url，用于不同代理/网关
+    # Support optional base_url for different proxies/gateways
     if "base_url" in model_config and model_config["base_url"]:
         client = OpenAI(api_key=model_config["api_key"], base_url=model_config["base_url"])
     else:
@@ -39,7 +39,7 @@ def model_call(
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt}
     ]
-    
+
     try_time = 0
     while try_time < 3:
         try:
@@ -120,7 +120,7 @@ def model_call_with_thinking(
         If return_usage=True:
             Tuple of (response, usage_info) where usage_info is a dict with 'prompt_tokens', 'completion_tokens', 'total_tokens'
     """
-    # 支持可选的 base_url，用于不同代理/网关
+    # Support optional base_url for different proxies/gateways
     if "base_url" in model_config and model_config["base_url"]:
         client = OpenAI(api_key=model_config["api_key"], base_url=model_config["base_url"])
     else:
@@ -129,7 +129,7 @@ def model_call_with_thinking(
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt}
     ]
-    
+
     try_time = 0
     while try_time < 3:
         try:
@@ -207,7 +207,7 @@ def judge_interviewer_action(
     conversation_history_str = build_history_into_prompt(conversation_history, with_note=True)
     initial_requirements_str = task.get("initial_requirements", "")
     
-    # Format remaining requirements (适配 v7 格式: Aspect, RequirementText，没有 Corresponding User Story)
+    # Format remaining requirements (adapted for v7 format: Aspect, RequirementText, no Corresponding User Story)
     remaining_requirements_str = ""
     for requirement in remaining_requirements:
         req_id = requirement.get("id", "")
