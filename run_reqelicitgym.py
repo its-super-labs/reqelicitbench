@@ -107,9 +107,25 @@ def main():
     os.makedirs(conversation_dir, exist_ok=True)
 
     llm_name = llm.split("/")[-1]
-    # 构建完整的文件路径（用 all 标识是全量测试）
-    evaluation_result_path = f"{result_dir}/{llm_name}_{'thinking' if use_thinking else 'no_thinking'}_all.json"
-    conversation_result_path = f"{conversation_dir}/{llm_name}_{'thinking' if use_thinking else 'no_thinking'}_all.json"
+
+    # Derive thinking label from actual config rather than just the flag.
+    # Models like Gemini 3.5 Flash think by default, so "no_thinking" is misleading
+    # when no explicit disable was passed.
+    def get_thinking_label(use_thinking, extra_body):
+        if use_thinking:
+            return "thinking"
+        if extra_body:
+            if extra_body.get("thinking_config", {}).get("thinking_budget") == 0:
+                return "no_thinking"
+            if extra_body.get("thinking", {}).get("type") == "disabled":
+                return "no_thinking"
+            if extra_body.get("enable_thinking") is False:
+                return "no_thinking"
+        return "default"
+
+    thinking_label = get_thinking_label(use_thinking, extra_body)
+    evaluation_result_path = f"{result_dir}/{llm_name}_{thinking_label}_all.json"
+    conversation_result_path = f"{conversation_dir}/{llm_name}_{thinking_label}_all.json"
 
     # 创建配置
     config = ReqElicitGymConfig(
